@@ -10,7 +10,6 @@ import net.minecraft.util.registry.Registry;
 public class FabricEffects {
 
 
-
     public FabricEffects() {
     }
 
