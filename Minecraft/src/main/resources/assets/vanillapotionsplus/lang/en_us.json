@@ -1,0 +1,15 @@
+{
+  "effect.vanillapotionsplus.shrinking": "Shrinking",
+  "item.minecraft.potion.effect.shrinking": "Potion of shrinking",
+  "item.minecraft.splash_potion.effect.shrinking": "Splash potion of shrinking",
+  "item.minecraft.lingering_potion.effect.shrinking": "Lingering potion of shrinking",
+  "item.minecraft.tipped_arrow.effect.shrinking": "Arrow of shrinking",
+  "effect.vanillapotionsplus.growing": "growing",
+  "item.minecraft.potion.effect.growing": "Potion of growing",
+  "item.minecraft.splash_potion.effect.growing": "Splash potion of growing",
+  "item.minecraft.lingering_potion.effect.growing": "Lingering potion of growing",
+  "item.minecraft.tipped_arrow.effect.growing": "Arrow of shrinking",
+  "item.minecraft.potion.effect.glowing": "Potion of glowing",
+  "item.minecraft.splash_potion.effect.glowing": "Splash potion of glowing",
+  "item.minecraft.lingering_potion.effect.glowing": "Lingering potion of glowing"
+}

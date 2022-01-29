@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.vanilla.potions.vanillapotionsplus.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "BrewingRegistryMixin",
+    "WitchEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
