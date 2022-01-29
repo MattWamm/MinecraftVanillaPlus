@@ -5,4 +5,4 @@ POTIONS:
 Current Incompatibilities:
 WitchEntity (Overwrite)
 MOBS:
-DUGEONS:
+DUNGEONS:
