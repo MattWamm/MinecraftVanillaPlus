@@ -28,5 +28,18 @@
     "fabricloader": ">=0.12.12",
     "fabric": "*",
     "minecraft": "1.18.1"
+  },
+
+  "entrypoints": {
+    "cardinal-components": [
+      "com.vanilla.potions.vanillapotionsplus.vanillapotionsplus"
+    ]
+  },
+  "custom": {
+    "cardinal-components":[
+      "vanillapotionsplus:flagcomponent"
+    ]
   }
+
+
 }

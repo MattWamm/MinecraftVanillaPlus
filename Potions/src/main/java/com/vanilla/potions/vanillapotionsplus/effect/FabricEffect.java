@@ -1,38 +1,30 @@
-package com.vanilla.potions.vanillapotionsplus;
+package com.vanilla.potions.vanillapotionsplus.effect;
 
+import ca.weblite.objc.Client;
 import com.google.common.collect.Maps;
+import com.vanilla.potions.vanillapotionsplus.ExtraFlagComponent;
+import com.vanilla.potions.vanillapotionsplus.mixins.DataTrackerMixin;
+import com.vanilla.potions.vanillapotionsplus.mixins.EntityMixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.packet.s2c.play.RemoveEntityStatusEffectS2CPacket;
-import net.minecraft.recipe.BrewingRecipeRegistry;
-import net.minecraft.recipe.RecipeType;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.Text;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.Final;
 import virtuoel.pehkui.api.*;
-import virtuoel.pehkui.command.argument.ScaleOperationArgumentType;
-import virtuoel.pehkui.mixin.PlayerEntityMixin;
-import virtuoel.pehkui.util.CommandUtils;
 
-import java.util.EventListener;
 import java.util.Map;
-import java.util.UUID;
 
 
 public class FabricEffect extends StatusEffect {
     private final Map<EntityAttribute, EntityAttributeModifier> attributeModifiers = Maps.newHashMap();
-
 
     protected FabricEffect(StatusEffectCategory category, int color) {
         super(category, color);
@@ -40,6 +32,7 @@ public class FabricEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+
     }
 
     @Override
@@ -65,6 +58,12 @@ public class FabricEffect extends StatusEffect {
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+
+        if(this == FabricEffects.PHASING)
+        {
+
+            ExtraFlagComponent.KEY.get(entity).setPhazing(false);
+        }
         for(final ScaleType type : ScaleRegistries.SCALE_TYPES.values())
         {
             final ScaleData data = type.getScaleData(entity);
@@ -77,10 +76,18 @@ public class FabricEffect extends StatusEffect {
         }
     }
 
-
     private void applyEffect(LivingEntity entity, int amplifier)
     {
 
+        if(this == FabricEffects.PHASING)
+        {
+
+            ExtraFlagComponent.KEY.get(entity).setPhazing(true);
+            if(entity instanceof PlayerEntity);
+        }
+
+
+        //entity.getDimensions(entity.getPose()).scaled(0.4f);
         if(this == FabricEffects.SHRINKING)
         {
             if(entity.hasStatusEffect(FabricEffects.GROWING))
@@ -96,6 +103,7 @@ public class FabricEffect extends StatusEffect {
             }
             ScaleTypes.MOTION.getScaleData(entity).setTargetScale(0.5f);
             ScaleTypes.DEFENSE.getScaleData(entity).setTargetScale(2);
+            return;
         }
         if(this == FabricEffects.GROWING)
         {

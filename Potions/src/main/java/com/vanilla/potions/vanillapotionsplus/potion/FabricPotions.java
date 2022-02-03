@@ -1,17 +1,15 @@
-package com.vanilla.potions.vanillapotionsplus;
+package com.vanilla.potions.vanillapotionsplus.potion;
 
+import com.vanilla.potions.vanillapotionsplus.effect.FabricEffects;
 import com.vanilla.potions.vanillapotionsplus.mixins.BrewingRegistryMixin;
-import net.minecraft.command.argument.ArgumentTypes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
-import net.minecraft.recipe.BrewingRecipeRegistry;
 import net.minecraft.util.registry.Registry;
 
-public class FabricPotions {
+public class  FabricPotions {
 
 
     public static final FabricPotion SHRINKING;

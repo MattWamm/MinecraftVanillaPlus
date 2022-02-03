@@ -1,7 +1,5 @@
-package com.vanilla.potions.vanillapotionsplus;
+package com.vanilla.potions.vanillapotionsplus.effect;
 
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.Identifier;
@@ -27,4 +25,6 @@ public class FabricEffects {
     public static final StatusEffect CLIMBING = register("climbing",(new FabricEffect(StatusEffectCategory.NEUTRAL, 10741248)));
     public static final StatusEffect PURITY = register("purity",(new FabricEffect(StatusEffectCategory.NEUTRAL, 10741248)));
     public static final StatusEffect EXPLODING = register("exploding",(new FabricEffect(StatusEffectCategory.NEUTRAL, 10741248)));
+    public static final StatusEffect CONFUSING = register("confusing",(new FabricEffect(StatusEffectCategory.NEUTRAL, 10741248)));
+
 }

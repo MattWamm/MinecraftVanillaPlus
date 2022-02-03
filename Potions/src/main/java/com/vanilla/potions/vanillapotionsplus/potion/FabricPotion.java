@@ -1,17 +1,9 @@
-package com.vanilla.potions.vanillapotionsplus;
+package com.vanilla.potions.vanillapotionsplus.potion;
 
-import com.google.common.collect.ImmutableList;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.UseAction;
-import net.minecraft.world.World;
+
+
 import org.jetbrains.annotations.Nullable;
 
 public class FabricPotion extends Potion {

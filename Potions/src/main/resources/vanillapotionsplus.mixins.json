@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "BrewingRegistryMixin",
-    "WitchEntityMixin"
+    "WitchEntityMixin",
+    "EntityMixin",
+    "DataTrackerMixin"
   ],
   "client": [
   ],

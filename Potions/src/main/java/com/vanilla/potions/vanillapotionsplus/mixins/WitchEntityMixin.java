@@ -1,8 +1,8 @@
 package com.vanilla.potions.vanillapotionsplus.mixins;
 
 
-import com.vanilla.potions.vanillapotionsplus.FabricEffects;
-import com.vanilla.potions.vanillapotionsplus.FabricPotions;
+import com.vanilla.potions.vanillapotionsplus.effect.FabricEffects;
+import com.vanilla.potions.vanillapotionsplus.potion.FabricPotions;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.WitchEntity;
@@ -32,6 +32,8 @@ public abstract class WitchEntityMixin{
     @Overwrite
     public void attack(LivingEntity target, float pullProgress) {
         final WitchEntity self = ((WitchEntity) (Object) this);
+
+
 
 
         if (this.isDrinking()) {
